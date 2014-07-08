@@ -7,11 +7,11 @@ else{
 	$password = '';
 }
 
-if(isset($_POST['min_words'])) {
-	$min_words = $_POST['min_words'];
+if(isset($_POST['num_words'])) {
+	$num_words = $_POST['num_words'];
 }
 else {
-	$min_words = 0;
+	$num_words = 0;
 }
 
 if(isset($_POST['delimeter'])) {
@@ -34,8 +34,8 @@ foreach($vocab as $k => $v){
 	$vocab_new[$v] = $v ;
 }
 
-if ($min_words > 0) {
-	$words = array_rand($vocab_new, $min_words);
+if ($num_words > 0) {
+	$words = array_rand($vocab_new, $num_words);
 	if ($append_num == True) {
 		array_push($words, rand(0, 10));
 	}
